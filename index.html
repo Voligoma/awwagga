@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página con texto grande centrado</title>
+  <style>
+    /* Reset mínimo */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background-color: #000; /* fondo negro */
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Contenedor centrado con Flexbox */
+    .center {
+      min-height: 100%;
+      display: flex;
+      align-items: center;     /* centra verticalmente */
+      justify-content: center; /* centra horizontalmente */
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Texto muy grande y legible */
+    h1 {
+      color: #fff;            /* blanco */
+      margin: 0;
+      line-height: 1;
+      font-weight: 800;
+      /* escala responsiva: mínimo 3rem, ideal basado en viewport, máximo 18rem */
+      font-size: clamp(3rem, 18vw, 18rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* un poco de profundidad */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Pequeña mejora para accesibilidad en pantallas muy pequeñas */
+    @media (max-height: 360px) {
+      h1 { font-size: clamp(2rem, 12vw, 8rem); }
+    }
+  </style>
+</head>
+<body>
+  <main class="center" role="main" aria-label="Texto muy grande centrado">
+    <h1>AWWAGGA</h1>
+  </main>
+</body>
+</html>
